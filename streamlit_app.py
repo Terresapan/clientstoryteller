@@ -1,5 +1,6 @@
 import streamlit as st
 from maindoc import process_inputs, get_workflow
+# from maingmail import process_inputs, get_workflow
 from utils import check_password, save_feedback
 
 # Streamlit UI setup
@@ -18,7 +19,7 @@ def setup_sidebar():
         "1. :key: Enter password to access the app\n"
         "2. :pencil: Upload project desc and consultant case study\n"
         "3. :writing_hand: Generate a draft and refine it through feedback\n"
-        "4. ⏳ Finalize the story and save it in your Google Doc\n"
+        "4. ⏳ Finalize the story and save it in Google Doc\n"
     )
 
     # st.sidebar.write("### 🎧 Listen to our Podcast for more insights")
@@ -149,7 +150,7 @@ def main():
                     workflow = get_workflow()
                     try:
                         # Create a complete state for Google Doc update
-                        from maingmail import State
+                        from maindoc import State
                         update_state = State(
                             project_desc=state.project_desc,
                             case_study=state.case_study,

@@ -169,10 +169,7 @@ def get_workflow():
             import traceback
             st.write(traceback.format_exc())
             return {"draft": state.draft}
-
-
-       
-           
+              
 
     # Define workflow
     workflow = StateGraph(State)
